@@ -72,19 +72,20 @@
 
 #search{
     height: 38px;
-    width: 750px;
+    width: 100%;
     position: relative;
     right: 1px;
     border: none;
     font-size: 14px;
+    flex-grow: 1;
 }
 
 .navsearch{
     display: flex;
     align-items: center;
     align-content: center;
-    max-width: 850px;
     width: 100%;
+    max-width: 850px;
     height: 40px;
     justify-content: space-evenly;
 }
@@ -208,7 +209,9 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: #9CA4B3;
+    height: auto;
     min-height: 1450px;
+    padding: 20px 0;
 }
 
 .box{
@@ -300,8 +303,10 @@
     background-position: center;
 }
 
-.box9{
-    height: 220px;
+.box9 , .box10{
+    /* height: 220px; */
+    height: auto;
+    max-width: 1472px;
     width: 97%;
     background-color: #ffffff;
     padding: 20px 0px 15px;
@@ -317,13 +322,13 @@
     background-position: center;
 }
 
-.box10{
+/* .box10{
     height: 220px;
     width: 97%;
     background-color: #ffffff;
     padding: 20px 0px 15px;
     margin: 10px auto;
-}
+} */
 
 .box10img{
     background-image: url("box10img.png");
