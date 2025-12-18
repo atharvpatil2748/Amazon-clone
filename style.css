@@ -83,7 +83,8 @@
     display: flex;
     align-items: center;
     align-content: center;
-    width: 850px;
+    max-width: 850px;
+    width: 100%;
     height: 40px;
     justify-content: space-evenly;
 }
@@ -207,7 +208,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: #9CA4B3;
-    height: 1450px;
+    min-height: 1450px;
 }
 
 .box{
@@ -234,6 +235,7 @@
     background-size: cover;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-position: center;
 }
 
 .box2img{
@@ -242,6 +244,7 @@
     background-size: cover;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-position: center;
 }
 
 .box3img{
@@ -250,6 +253,7 @@
     background-size: cover;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-position: center;
 }
 
 .box4img{
@@ -258,6 +262,7 @@
     background-size: cover;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-position: center;
 }
 
 .box5img{
@@ -266,6 +271,7 @@
     background-size: cover;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-position: center;
 }
 
 .box6img{
@@ -274,6 +280,7 @@
     background-size: cover;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-position: center;
 }
 
 .box7img{
@@ -282,6 +289,7 @@
     background-size: cover;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-position: center;
 }
 
 .box8img{
@@ -289,13 +297,15 @@
     height: 300px;
     background-size: cover;
     margin-bottom: 10px;
+    background-position: center;
 }
 
 .box9{
     height: 220px;
-    width: 1472px;
+    width: 97%;
     background-color: #ffffff;
     padding: 20px 0px 15px;
+    margin: 10px auto;
 }
 
 .box9img{
@@ -304,13 +314,15 @@
     margin-top: 10px;
     margin-bottom: 10px;
     height: 180px;
+    background-position: center;
 }
 
 .box10{
     height: 220px;
-    width: 1472px;
+    width: 97%;
     background-color: #ffffff;
     padding: 20px 0px 15px;
+    margin: 10px auto;
 }
 
 .box10img{
@@ -319,4 +331,136 @@
     margin-top: 10px;
     margin-bottom: 10px;
     height: 180px;
+    background-position: center;
+}
+
+/* Media Query for Tablets and Mobile Phones */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Navbar Adjustments */
+    .navbar {
+        height: auto; /* Allow navbar to grow if elements wrap */
+        flex-wrap: wrap; 
+        padding: 10px;
+    }
+
+    .navsearch {
+        width: 100%; /* Search bar takes full width on mobile */
+        order: 3;    /* Moves search bar below the logo and sign-in */
+        margin-top: 10px;
+    }
+
+    #search {
+        width: 100%; /* Input fills the remaining space */
+    }
+
+    /* 2. Hide non-essential items to save space */
+    .navaddress, .panelops, .paneldeals {
+        display: none; 
+    }
+
+    /* 3. Hero Section Adjustment */
+    .herosection {
+        height: 200px; /* Smaller banner for smaller screens */
+    }
+
+    .heromsg {
+        width: 90%;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    /* 4. The Grid - The most important part */
+    .shopsection {
+        height: auto;   /* CRITICAL: Remove the fixed 1450px height */
+        padding-bottom: 20px;
+    }
+
+    .box {
+        width: 45%;    /* 2 boxes per row instead of 4 */
+        margin-top: 20px;
+        height: auto;  /* Allow boxes to scale with content */
+    }
+
+    /* Full width for the wide boxes at the bottom */
+    .box9, .box10 {
+        width: 95%;
+        height: auto;
+    }
+}
+
+/* Extra Small Phones (Portrait) */
+@media screen and (max-width: 480px) {
+    .box {
+        width: 90%;    /* 1 box per row for very small screens */
+    }
+    
+    .logo {
+        width: 80px;   /* Smaller logo */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* 1. Reset Navbar height and allow wrapping */
+    .navbar {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+    /* 2. Make Logo and Sign-in stay on the top row */
+    .navlogo {
+        width: 80px;
+        order: 1;
+    }
+
+    .navsignin {
+        order: 2;
+        height: auto;
+        text-align: right;
+    }
+
+    /* 3. Move Search Bar to its own row at the bottom */
+    .navsearch {
+        width: 100%; /* Full width on mobile */
+        order: 3;    /* Force it below other elements */
+        margin-top: 10px;
+        height: 45px;
+    }
+
+    #search {
+        width: 100%; /* Stretch input to fill the row */
+        flex-grow: 1;
+    }
+
+    /* 4. Hide secondary elements to reduce clutter */
+    .navaddress, 
+    .navcart .cart, 
+    .lan {
+        display: none; 
+    }
+
+    /* Show just the cart icon if needed */
+    .navcart {
+        order: 2;
+        font-size: 24px;
+    }
+
+    /* 5. Panel Adjustments */
+    .panel {
+        font-size: 12px;
+        overflow-x: auto; /* Allow side-scrolling for menu items */
+        justify-content: flex-start;
+        padding: 0 10px;
+    }
+
+    .panelops p {
+        white-space: nowrap; /* Prevent text from breaking into 2 lines */
+        margin-right: 15px;
+    }
+
+    .paneldeals {
+        display: none; /* Hide the right-side text on small screens */
+    }
 }
